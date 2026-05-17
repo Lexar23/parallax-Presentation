@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+
+:root {
+  --background: #0b0704;
+  --foreground: #f5efe6;
+  
+  --color-sahara-gold: #d4a373;
+  --color-sahara-sand: #e9d8a6;
+  --color-desert-dark: #0b0704;
+  --color-desert-dune: #cca43b;
+  --color-mauri-green: #006b3c;
+  --color-mauri-gold: #ffd700;
+  
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+}
+
+@theme {
+  --color-sahara-gold: var(--color-sahara-gold);
+  --color-sahara-sand: var(--color-sahara-sand);
+  --color-desert-dark: var(--color-desert-dark);
+  --color-desert-dune: var(--color-desert-dune);
+  --color-mauri-green: var(--color-mauri-green);
+  --color-mauri-gold: var(--color-mauri-gold);
+  
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 10s ease-in-out infinite;
+  --animate-glow: glow 4s ease-in-out infinite;
+  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-sand-drift: sand-drift 120s linear infinite;
+  --animate-train-move: train-move 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(-10px) rotate(-1deg); }
+  50% { transform: translateY(10px) rotate(1deg); }
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 10px rgba(0, 107, 60, 0.2)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 30px rgba(0, 107, 60, 0.4)); }
+}
+
+@keyframes sand-drift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes train-move {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-2500px); }
+}
+
+/* Custom Scroll System */
+html, body {
+  background-color: var(--color-desert-dark);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide scrollbar but keep functionality for immersive cinematic experience */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(11, 7, 4, 0.95);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sahara-gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mauri-gold);
+}
+
+/* Background overlays and textures */
+.desert-grain-overlay {
+  background-image: radial-gradient(rgba(212, 163, 115, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(15, 10, 5, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 163, 115, 0.15);
+}
+
+.glass-panel-green {
+  background: rgba(0, 107, 60, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 107, 60, 0.2);
+}
+
+/* Parallax layout helpers */
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Custom text shadows for readability over busy backgrounds */
+.text-shadow-cinematic {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
