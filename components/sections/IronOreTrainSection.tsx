@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function IronOreTrainSection() {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   // Track scroll for active parallax
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -24,28 +24,28 @@ export default function IronOreTrainSection() {
 
   // Horizontal train movement
   const xTrain = useTransform(
-    scrollYProgress, 
-    [0.1, 0.9], 
+    scrollYProgress,
+    [0.1, 0.9],
     ["100vw", "-1200px"]
   );
 
   return (
-    <section 
-      id="iron-train" 
+    <section
+      id="iron-train"
       ref={ref}
       className="parallax-section bg-[#070402] relative py-20 flex flex-col justify-between items-center overflow-hidden animate-dune"
       style={{ minHeight: "105vh" }}
     >
       {/* Sky & backdunes */}
-      <motion.div 
-        style={{ y: ySky }} 
+      <motion.div
+        style={{ y: ySky }}
         className="absolute inset-0 bg-gradient-to-b from-[#010103] via-[#1c0f08] to-[#2f1b0c] z-0 pointer-events-none"
       />
-      
+
       <div className="absolute inset-0 desert-grain-overlay opacity-25 pointer-events-none z-10" />
 
       {/* Back Dunes */}
-      <motion.div 
+      <motion.div
         style={{ y: yDunesBack }}
         className="absolute bottom-[35%] left-0 right-0 z-10 w-full pointer-events-none"
       >
@@ -56,9 +56,9 @@ export default function IronOreTrainSection() {
 
       {/* Main Grid: Text & Real Photo Card */}
       <div className="w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start z-30 pt-16">
-        
+
         {/* Left Side: Text and speech */}
-        <motion.div 
+        <motion.div
           style={{ y: yText }}
           className="lg:col-span-7 flex flex-col items-start text-left"
         >
@@ -89,14 +89,14 @@ export default function IronOreTrainSection() {
         </motion.div>
 
         {/* Right Side: Floating Real Train Card (Ninth Provided Image) */}
-        <motion.div 
+        <motion.div
           style={{ y: yImage }}
           className="lg:col-span-5 flex justify-center lg:justify-end"
         >
           <div className="w-full max-w-[340px] aspect-[4/3] rounded-3xl overflow-hidden glass-panel p-1.5 border border-white/10 shadow-2xl rotate-3">
             <div className="w-full h-full relative rounded-2xl overflow-hidden">
-              <Image 
-                src="/img/WhatsApp Image 2026-05-17 at 10.47.33.jpeg"
+              <Image
+                src="/img/WhatsApp Image 2026-05-17 at 10.47.07 (3).jpeg"
                 alt="Sahara Desert Iron Ore Train"
                 fill
                 className="object-contain"
@@ -108,20 +108,20 @@ export default function IronOreTrainSection() {
       </div>
 
       {/* Train & Track System */}
-      <motion.div 
+      <motion.div
         style={{ y: yTrackAndTrain }}
         className="absolute bottom-[10%] left-0 right-0 w-full z-20 pointer-events-none flex flex-col justify-end"
       >
         {/* Horizontal Moving Train Container */}
-        <motion.div 
+        <motion.div
           style={{ x: xTrain }}
           className="w-fit flex items-end translate-y-3 relative z-30"
         >
           {/* THE SVG TRAIN */}
-          <svg 
-            viewBox="0 0 1600 80" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg" 
+          <svg
+            viewBox="0 0 1600 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             className="h-16 w-[1600px] drop-shadow-[0_8px_8px_rgba(0,0,0,0.7)]"
           >
             {/* LOCOMOTIVE */}
@@ -171,7 +171,7 @@ export default function IronOreTrainSection() {
       </motion.div>
 
       {/* Foreground Dunes */}
-      <motion.div 
+      <motion.div
         style={{ y: yDunesFront }}
         className="absolute bottom-0 left-0 right-0 z-30 w-full pointer-events-none"
       >

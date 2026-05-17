@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function CultureSection() {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   // Parallax scroll
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -19,8 +19,8 @@ export default function CultureSection() {
   const yText = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
   return (
-    <section 
-      id="culture" 
+    <section
+      id="culture"
       ref={ref}
       className="parallax-section bg-[#0b0704] relative py-20 flex flex-col justify-center items-center overflow-hidden"
     >
@@ -29,23 +29,23 @@ export default function CultureSection() {
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-mauri-gold/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
-        
+
         {/* Left Side: Parallax Cultural Cards Showcase */}
         <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 order-2 lg:order-1">
-          
+
           {/* Card 1: Traditional Clothing (Daraa) */}
-          <motion.div 
+          <motion.div
             style={{ y: yCardLeft }}
             className="glass-panel p-5 rounded-3xl relative border border-white/10 shadow-2xl flex flex-col justify-between min-h-[360px]"
           >
             <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#121c2c] to-[#070b12] relative overflow-hidden border border-white/5">
-              <Image 
-                src="/img/WhatsApp Image 2026-05-17 at 10.47.07 (2).jpeg"
+              <Image
+                src="/img/WhatsApp Image 2026-05-17 at 10.47.33 (2).jpeg"
                 alt="Traditional clothing in Mauritania"
                 fill
                 className="object-contain"
               />
-              
+
               <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-0.5 rounded-lg border border-white/10 z-10">
                 <span className="text-[9px] uppercase font-bold text-sahara-gold tracking-wider">Traditional Daraa</span>
               </div>
@@ -60,12 +60,12 @@ export default function CultureSection() {
           </motion.div>
 
           {/* Card 2: Tea Ritual (Ataya) */}
-          <motion.div 
+          <motion.div
             style={{ y: yCardRight }}
             className="glass-panel p-5 rounded-3xl relative border border-white/10 shadow-2xl flex flex-col justify-between min-h-[360px] md:mt-6"
           >
             <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-[#23150d] to-[#0c0805] relative overflow-hidden border border-white/5">
-              <Image 
+              <Image
                 src="/img/WhatsApp Image 2026-05-17 at 10.47.07 (3).jpeg"
                 alt="Mauritanian Ataya Mint Tea ritual"
                 fill
@@ -88,7 +88,7 @@ export default function CultureSection() {
         </div>
 
         {/* Right Side: Narrative Text */}
-        <motion.div 
+        <motion.div
           style={{ y: yText }}
           className="lg:col-span-5 flex flex-col justify-center text-left order-1 lg:order-2"
         >

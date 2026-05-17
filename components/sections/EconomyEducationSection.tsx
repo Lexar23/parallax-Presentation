@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function EconomyEducationSection() {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   // Scroll mapping
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -27,43 +27,45 @@ export default function EconomyEducationSection() {
   ];
 
   return (
-    <section 
-      id="economy-education" 
+    <section
+      id="economy-education"
       ref={ref}
-      className="parallax-section bg-[#0b0704] relative py-20 flex flex-col justify-center items-center overflow-hidden"
+      className="parallax-section bg-[#0b0704] relative py-12 md:py-16 flex flex-col justify-center items-center overflow-hidden"
     >
       <div className="absolute inset-0 desert-grain-overlay opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 left-10 w-[300px] h-[300px] bg-mauri-green/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-sahara-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-start z-10">
-        
+      <div className="w-[90%] max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start z-10">
+
         {/* Left Column: Economy Products */}
-        <motion.div 
+        <motion.div
           style={{ y: yLeft }}
-          className="lg:col-span-6 flex flex-col gap-6"
+          className="lg:col-span-6 flex flex-col gap-4"
         >
-          <div className="text-left mb-2">
-            <span className="text-sahara-gold uppercase tracking-[0.25em] text-xs font-semibold block mb-2">
+          <div className="text-left mb-1">
+            <span className="text-sahara-gold uppercase tracking-[0.25em] text-xs font-semibold block mb-1">
               ECONOMY
             </span>
-            <h2 className="font-serif font-bold text-3xl md:text-4xl uppercase text-white">
+            <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-4xl uppercase text-white">
               The Main <span className="bg-gradient-to-r from-sahara-gold to-mauri-gold bg-clip-text text-transparent">Products</span>
             </h2>
           </div>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {products.map((item, idx) => (
-              <div 
+              <div
                 key={idx}
-                className="glass-panel p-4 rounded-xl border border-white/5 flex items-center gap-4 transition-all"
+                className={`glass-panel p-3 rounded-xl border border-white/5 flex items-center gap-3 transition-all ${
+                  idx === 4 ? "sm:col-span-2" : ""
+                }`}
               >
                 <div className="w-8 h-8 rounded-lg bg-white/[0.03] border border-white/10 flex items-center justify-center shrink-0">
                   {item.icon}
                 </div>
-                <div>
-                  <h4 className="text-white font-bold text-sm uppercase tracking-wide">{item.name}</h4>
-                  <p className="text-zinc-400 text-xs mt-0.5 leading-relaxed font-light">{item.desc}</p>
+                <div className="text-left">
+                  <h4 className="text-white font-bold text-xs uppercase tracking-wide">{item.name}</h4>
+                  <p className="text-zinc-400 text-[10px] mt-0.5 leading-normal font-light">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -71,30 +73,30 @@ export default function EconomyEducationSection() {
         </motion.div>
 
         {/* Right Column: Education & Languages */}
-        <motion.div 
+        <motion.div
           style={{ y: yRight }}
-          className="lg:col-span-6 flex flex-col gap-6 lg:mt-2"
+          className="lg:col-span-6 flex flex-col gap-4 lg:mt-0"
         >
-          <div className="text-left mb-4">
-            <span className="text-mauri-gold uppercase tracking-[0.25em] text-xs font-semibold block mb-2">
+          <div className="text-left mb-1">
+            <span className="text-mauri-gold uppercase tracking-[0.25em] text-xs font-semibold block mb-1">
               LEARNING & LANGUAGES
             </span>
-            <h2 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl uppercase text-white leading-tight">
+            <h2 className="font-serif font-bold text-xl md:text-2xl lg:text-3xl uppercase text-white leading-tight">
               Education & <span className="bg-gradient-to-r from-mauri-gold to-mauri-green bg-clip-text text-transparent">Tongues</span>
             </h2>
           </div>
 
           {/* Core Speech Text Box */}
-          <div className="glass-panel p-8 rounded-3xl border border-white/10 shadow-2xl mb-4 text-left">
-            <p className="text-white text-lg md:text-2xl lg:text-3xl leading-relaxed font-medium select-text">
+          <div className="glass-panel p-5 md:p-6 rounded-3xl border border-white/10 shadow-2xl text-left">
+            <p className="text-white text-base md:text-xl lg:text-2xl leading-relaxed font-medium select-text">
               "Education is free and compulsory. The main languages are Arabic and French. The main products are fish, iron, gold, livestock and dates."
             </p>
           </div>
 
           {/* Real Photo container (Tenth Provided Image) */}
-          <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden glass-panel p-1 border border-white/10 shadow-xl relative min-h-[160px]">
+          <div className="w-full h-[120px] md:h-[150px] rounded-2xl overflow-hidden glass-panel p-1 border border-white/10 shadow-xl relative">
             <div className="w-full h-full relative rounded-xl overflow-hidden">
-              <Image 
+              <Image
                 src="/img/WhatsApp Image 2026-05-17 at 10.47.33 (1).jpeg"
                 alt="Education and products landscape in Mauritania"
                 fill
@@ -104,18 +106,18 @@ export default function EconomyEducationSection() {
           </div>
 
           {/* Languages card */}
-          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-2.5">
-            <h4 className="font-bold text-xs text-white uppercase tracking-wider flex items-center gap-2">
-              <Globe className="w-4 h-4 text-mauri-gold" /> Main Languages
+          <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col gap-2">
+            <h4 className="font-bold text-[11px] text-white uppercase tracking-wider flex items-center gap-2">
+              <Globe className="w-3.5 h-3.5 text-mauri-gold" /> Main Languages
             </h4>
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="p-2.5 rounded-lg bg-black/30 border border-white/5">
-                <span className="font-bold text-white block">Arabic</span>
-                <span className="text-[10px] text-zinc-500 block mt-0.5">Official & cultural tongue</span>
+                <span className="font-bold text-white block text-[11px]">Arabic</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Official & cultural tongue</span>
               </div>
               <div className="p-2.5 rounded-lg bg-black/30 border border-white/5">
-                <span className="font-bold text-white block">French</span>
-                <span className="text-[10px] text-zinc-500 block mt-0.5">Used in commerce & schools</span>
+                <span className="font-bold text-white block text-[11px]">French</span>
+                <span className="text-[9px] text-zinc-500 block mt-0.5">Used in commerce & schools</span>
               </div>
             </div>
           </div>
