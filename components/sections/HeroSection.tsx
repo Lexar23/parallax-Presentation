@@ -117,7 +117,7 @@ export default function HeroSection() {
           {/* Speech Text Box */}
           <div className="glass-panel p-8 rounded-3xl border border-white/10 shadow-2xl max-w-3xl bg-black/50 backdrop-blur-md mb-10 text-left">
             <p className="text-lg md:text-1xl lg:text-2xl leading-relaxed text-white font-medium tracking-wide select-text">
-              "Today I have to talk about Mauritania. It is an interesting country in West Africa, and 90% of its territory is the Sahara Desert."
+              "I´m going to talk about Mauritania. It is an interesting country in West Africa, and 90% of its territory is the Sahara Desert."
             </p>
           </div>
 
